@@ -37,6 +37,11 @@ suppressWarnings(
 )
 
 print(fit)
+# en el fit, el value lo que significa es el conjunto de negative log likelihood de todas
+# las observaciones
+# counts means la de veces que ha estado contando. El gradiente nos dice como cerca de cero estamos
+# converge de cero dice que ha podido converger perfectamente. lo que queremos es encontrar un cero 
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

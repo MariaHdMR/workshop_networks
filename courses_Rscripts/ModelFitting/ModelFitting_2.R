@@ -38,12 +38,21 @@ k <- dat$Fertilized.count
 # 1) Define the negative log-likelihood function for binomial
 
 
+nlL.binom <- function(prob){
+  -sum(dbinom(k, N, prob, log = TRUE))
+}
+# N= counts;
+# K= fertilize counts
+
+hist(dat$Fertilized.count/dat$Total.count)
 
 # 2) Provide initial guess for binomial 'probability'
 
-
+# more or less is the 50% percent
+init.par <- list(prob = 0.5)
 
 # 3) Fit the model
+
 
 
 

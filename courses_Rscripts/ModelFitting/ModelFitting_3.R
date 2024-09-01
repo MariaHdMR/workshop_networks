@@ -49,6 +49,30 @@ curve(plot.f1(x, fit.f1),
 # compare their 1) parameter MLEs and 2) likelihoods.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# type II ----
+
+nlL.pois.f2 <- function(par){
+  a <- par['a']
+  h <- par['h']
+  -sum(dpois(k, (a * P)/(1+ a* h* P), log = TRUE))
+}
+
+fit.f2 <- optim(par = list(a = 1, h= 1),
+                fn = nlL.pois.f2)
+
+
+print(fit.f2)
+
+plot.f2 <- function(x, fit){
+  a <- fit$par['a']
+  h <- fit$par['h']
+  return((a * x) / (1+a*h*x))
+}
+curve(plot.f2(x, fit.f2), 
+      add = TRUE,
+      lwd = 2)
+
+# type III
 
 
 
